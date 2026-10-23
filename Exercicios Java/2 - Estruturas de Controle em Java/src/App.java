@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        // Instruções do exercicio estão no README.md
         // Programa 1
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite um número para saber a sua tabuada: ");
