@@ -17,18 +17,18 @@ public class Menu extends Conta {
                 break;
         }
         System.out.printf(" Qual das opções você deseja realizar?\r\n" +
-                        "        *Criar conta \n" +
-                        "        *Consultar saldo \n" + 
-                        "        *consultar cheque especial\r\n" + 
-                        "        *Depositar;\r\n" + 
-                        "        *Sacar ;\r\n" + 
-                        "        *Pagar boleto.\r\n" + 
-                        "        *Verificar uso de cheque especial.\r\n" +
-                        "        *Sair \r\n");
+                        "1, Criar conta \n" +
+                        "2, Consultar saldo \n" + 
+                        "3, consultar cheque especial\r\n" + 
+                        "4, Depositar;\r\n" + 
+                        "5, Sacar ;\r\n" + 
+                        "6, Pagar boleto.\r\n" + 
+                        "7, Verificar uso de cheque especial.\r\n" +
+                        "Sair \r\n");
                         
         setOpcao(scanner.nextLine());
         
-        if (opcao.equalsIgnoreCase("Criar conta")) {
+        if (opcao.equalsIgnoreCase("Criar conta") || opcao.equalsIgnoreCase("1")) {
             Conta conta = new Conta(0, 0, 0);
             setSaldo(0);
             setChequeEspecial(0);
@@ -48,11 +48,11 @@ public class Menu extends Conta {
             System.out.println("Conta criada com sucesso!");
             
         }
-        else if (opcao.equalsIgnoreCase("Consultar saldo")) {
+        else if (opcao.equalsIgnoreCase("Consultar saldo") || opcao.equalsIgnoreCase("2")) {
             System.out.println("Seu saldo é de: " + ConsultarSaldo());
-        } else if (opcao.equalsIgnoreCase("consultar cheque especial")) {
+        } else if (opcao.equalsIgnoreCase("consultar cheque especial") || opcao.equalsIgnoreCase("3")) {
             System.out.println("Seu cheque especial tem o valor de: " + ConsultarChequeEspecial());
-        } else if (opcao.equalsIgnoreCase("Depositar")) {
+        } else if (opcao.equalsIgnoreCase("Depositar") || opcao.equalsIgnoreCase("4")) {
             System.out.println("Digite o valor que deseja depositar: ");
             float valor = scanner.nextFloat();
             Depositar(valor);
@@ -68,12 +68,12 @@ public class Menu extends Conta {
                 setChequeEspecialUsado(0);
                 setTaxa(0);
             }
-        } else if (opcao.equalsIgnoreCase("Sacar")) {
+        } else if (opcao.equalsIgnoreCase("Sacar") || opcao.equalsIgnoreCase("5")) {
             System.out.println("Digite o valor que deseja sacar: ");
             float valor = scanner.nextFloat();
             Sacar(valor);
             System.out.println("Voçê sacou " + valor + " seu saldo agora é de: " + getSaldo());
-        } else if (opcao.equalsIgnoreCase("Pagar boleto")) {
+        } else if (opcao.equalsIgnoreCase("Pagar boleto" ) || opcao.equalsIgnoreCase("6")) {
             System.out.println("Digite o valor do boleto: ");
             setValor(scanner.nextFloat());
             System.out.println(getValor());
@@ -90,7 +90,7 @@ public class Menu extends Conta {
                 System.out.println("Saldo insuficiente!");
             }
             
-        } else if (opcao.equalsIgnoreCase("Verificar uso de cheque especial")) {
+        } else if (opcao.equalsIgnoreCase("Verificar uso de cheque especial") || opcao.equalsIgnoreCase("7")) {
             if (getSaldo() < 0) {
             System.out.println("A conta está usando cheque especial.");
             } else {
